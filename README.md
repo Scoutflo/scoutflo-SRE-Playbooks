@@ -6,11 +6,23 @@ This repository contains comprehensive incident response playbooks for **AWS** a
 
 ```
 scoutflo-SRE-Playbooks/
-├── AWS Playbooks/          # 25 AWS service playbooks
-│   └── README.md          # AWS playbooks documentation
-├── K8s Playbooks/         # 138 Kubernetes playbooks
-│   └── README.md          # Kubernetes playbooks documentation
-└── README.md              # This file
+├── AWS Playbooks/                    # 25 AWS service playbooks
+│   └── README.md                     # AWS playbooks documentation
+├── K8s Playbooks/                    # 138 Kubernetes playbooks (organized in 12 folders)
+│   ├── 01-Control-Plane/             # 18 playbooks
+│   ├── 02-Nodes/                     # 12 playbooks
+│   ├── 03-Pods/                      # 31 playbooks
+│   ├── 04-Workloads/                 # 23 playbooks
+│   ├── 05-Networking/                # 19 playbooks
+│   ├── 06-Storage/                   # 9 playbooks
+│   ├── 07-RBAC/                      # 6 playbooks
+│   ├── 08-Configuration/             # 6 playbooks
+│   ├── 09-Resource-Management/       # 8 playbooks
+│   ├── 10-Monitoring-Autoscaling/    # 3 playbooks
+│   ├── 11-Installation-Setup/        # 1 playbook
+│   ├── 12-Namespaces/                # 2 playbooks
+│   └── README.md                     # Kubernetes playbooks documentation
+└── README.md                         # This file
 ```
 
 ## Contents
@@ -33,16 +45,21 @@ scoutflo-SRE-Playbooks/
 See [AWS Playbooks/README.md](AWS%20Playbooks/README.md) for complete documentation.
 
 ### Kubernetes Playbooks (`K8s Playbooks/`)
-**138 playbooks** covering Kubernetes cluster and workload issues:
-- **Control Plane**: API Server, Scheduler, Controller Manager
-- **Nodes**: Node readiness, kubelet issues, resource constraints
-- **Pods**: Scheduling, lifecycle, health checks, resource limits
-- **Workloads**: Deployments, StatefulSets, DaemonSets, Jobs
-- **Networking**: Services, Ingress, DNS, Network Policies
-- **Storage**: PersistentVolumes, PersistentVolumeClaims
-- **RBAC**: ServiceAccounts, Roles, RoleBindings
-- **Monitoring**: Metrics Server, HPA, resource quotas
-- **Autoscaling**: Cluster Autoscaler, HPA scaling
+**138 playbooks** organized into **12 categorized folders** covering Kubernetes cluster and workload issues:
+
+**Folder Structure:**
+- `01-Control-Plane/` (18 playbooks) - API Server, Scheduler, Controller Manager, etcd
+- `02-Nodes/` (12 playbooks) - Node readiness, kubelet issues, resource constraints
+- `03-Pods/` (31 playbooks) - Scheduling, lifecycle, health checks, resource limits
+- `04-Workloads/` (23 playbooks) - Deployments, StatefulSets, DaemonSets, Jobs, HPA
+- `05-Networking/` (19 playbooks) - Services, Ingress, DNS, Network Policies, kube-proxy
+- `06-Storage/` (9 playbooks) - PersistentVolumes, PersistentVolumeClaims, StorageClasses
+- `07-RBAC/` (6 playbooks) - ServiceAccounts, Roles, RoleBindings, authorization
+- `08-Configuration/` (6 playbooks) - ConfigMaps and Secrets access issues
+- `09-Resource-Management/` (8 playbooks) - Resource Quotas, overcommit, compute resources
+- `10-Monitoring-Autoscaling/` (3 playbooks) - Metrics Server, Cluster Autoscaler
+- `11-Installation-Setup/` (1 playbook) - Helm and installation issues
+- `12-Namespaces/` (2 playbooks) - Namespace management issues
 
 **Key Topics:**
 - Pod lifecycle issues (CrashLoopBackOff, Pending, Terminating)
@@ -100,9 +117,10 @@ Correlation analysis framework:
 
 ### For Kubernetes Issues:
 1. Navigate to `K8s Playbooks/`
-2. Find the playbook matching your issue (search by resource type suffix)
-3. Follow the numbered steps, replacing placeholders with your actual resource names
-4. Use the Diagnosis section for correlation analysis
+2. Identify the category folder (e.g., `03-Pods/` for pod issues, `05-Networking/` for network issues)
+3. Find the playbook matching your specific issue within that folder
+4. Follow the numbered steps, replacing placeholders with your actual resource names
+5. Use the Diagnosis section for correlation analysis
 
 ## Usage Guidelines
 
