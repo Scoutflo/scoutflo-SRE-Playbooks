@@ -1,0 +1,27 @@
+[
+  {
+    "name": "💬 General Discussion",
+    "description": "General questions and discussions about the project",
+    "emoji": "💬"
+  },
+  {
+    "name": "💡 Ideas & Suggestions",
+    "description": "Share ideas and suggestions for new playbooks or improvements",
+    "emoji": "💡"
+  },
+  {
+    "name": "❓ Q&A",
+    "description": "Ask questions and get help from the community",
+    "emoji": "❓"
+  },
+  {
+    "name": "🎉 Show and Tell",
+    "description": "Share how you're using the playbooks or showcase your contributions",
+    "emoji": "🎉"
+  },
+  {
+    "name": "📚 Tutorials & Guides",
+    "description": "Share tutorials, guides, and best practices",
+    "emoji": "📚"
+  }
+]

@@ -4,6 +4,9 @@
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![GitHub Issues](https://img.shields.io/github/issues/Scoutflo/scoutflo-SRE-Playbooks)](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/Scoutflo/scoutflo-SRE-Playbooks)](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/Scoutflo/scoutflo-SRE-Playbooks)](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/network/members)
+[![GitHub Discussions](https://img.shields.io/github/discussions/Scoutflo/scoutflo-SRE-Playbooks)](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/discussions)
+[![GitHub Contributors](https://img.shields.io/github/contributors/Scoutflo/scoutflo-SRE-Playbooks)](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/graphs/contributors)
 
 > **Comprehensive incident response playbooks for AWS and Kubernetes environments** - Helping SREs diagnose and resolve infrastructure issues faster with systematic, step-by-step troubleshooting guides.
 
@@ -16,6 +19,7 @@
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [Connect with Us](#connect-with-us)
+- [Support](#support)
 - [Related Resources](#related-resources)
 - [License](#license)
 
@@ -322,6 +326,15 @@ Found a bug or error in a playbook?
 - **Roadmap**: Check out our [project roadmap](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/projects) to see what's coming
 - **Documentation**: Visit our [wiki](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/wiki) for detailed guides
 - **Legal**: [Privacy Policy](https://blog.scoutflo.com/privacy/) | [Terms of Service](https://blog.scoutflo.com/terms/)
+
+## Support
+
+Need help? Check out our [Support Guide](.github/SUPPORT.md) or:
+
+- **Questions**: [GitHub Discussions](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/discussions)
+- **Bugs**: [Report an issue](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/issues/new?template=bug_report.md)
+- **Features**: [Request a feature](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/issues/new?template=feature_request.md)
+- **Security**: See [SECURITY.md](SECURITY.md)
 
 ## Related Resources
 

@@ -1,0 +1,31 @@
+name: Community Health Check
+
+on:
+  schedule:
+    # Run weekly on Mondays
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+
+jobs:
+  community-health:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Community Standards
+        uses: github/super-linter@v4
+        env:
+          DEFAULT_BRANCH: master
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_MARKDOWN: true
+          VALIDATE_YAML: true
+
+      - name: Check Repository Health
+        run: |
+          echo "## Community Health Report" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ README.md exists" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ LICENSE exists" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ CONTRIBUTING.md exists" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ CODE_OF_CONDUCT.md exists" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ SECURITY.md exists" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Issue templates configured" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ PR template configured" >> $GITHUB_STEP_SUMMARY

@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Community Discussions
+    url: https://github.com/Scoutflo/scoutflo-SRE-Playbooks/discussions
+    about: Ask questions and discuss ideas with the community
+  - name: 📚 Documentation
+    url: https://scoutflo-documentation.gitbook.io/scoutflo-documentation
+    about: Check out our official documentation
+  - name: 🐛 Bug Report
+    url: https://github.com/Scoutflo/scoutflo-SRE-Playbooks/issues/new?template=bug_report.md
+    about: Report a bug in a playbook
+  - name: ✨ Feature Request
+    url: https://github.com/Scoutflo/scoutflo-SRE-Playbooks/issues/new?template=feature_request.md
+    about: Suggest a new playbook or enhancement
