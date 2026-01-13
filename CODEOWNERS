@@ -1,0 +1,22 @@
+# Code Owners
+# This file defines who owns different parts of the codebase
+# When a pull request is opened, the owners are automatically requested for review
+#
+# Each line is a file pattern followed by one or more owners
+# Owners are defined by their GitHub username or email
+#
+# For more information, see: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Global owners - all files
+* @AtharvaBondreScoutflo @Vedant-Vyawahare
+
+# AWS Playbooks
+/AWS Playbooks/ @AtharvaBondreScoutflo @Vedant-Vyawahare
+
+# Kubernetes Playbooks
+/K8s Playbooks/ @AtharvaBondreScoutflo @Vedant-Vyawahare
+
+# Documentation files
+/README.md @AtharvaBondreScoutflo @Vedant-Vyawahare
+/CONTRIBUTING.md @AtharvaBondreScoutflo @Vedant-Vyawahare
+/MAINTAINERS.md @AtharvaBondreScoutflo @Vedant-Vyawahare

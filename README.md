@@ -353,6 +353,15 @@ Found a bug or error in a playbook?
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## Maintainers
+
+This project is maintained by:
+
+- [@AtharvaBondreScoutflo](https://github.com/AtharvaBondreScoutflo)
+- [@Vedant-Vyawahare](https://github.com/Vedant-Vyawahare)
+
+For maintainer information, see [MAINTAINERS.md](MAINTAINERS.md).
+
 ## Acknowledgments
 
 - **Contributors**: Thank you to all contributors who help improve these playbooks
