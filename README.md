@@ -1,6 +1,43 @@
 # SRE Playbooks Repository
 
-This repository contains comprehensive incident response playbooks for **AWS** and **Kubernetes (K8s)** environments. These playbooks are designed to help Site Reliability Engineers (SREs) systematically diagnose and resolve common infrastructure and application issues.
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![GitHub Issues](https://img.shields.io/github/issues/Scoutflo/scoutflo-SRE-Playbooks)](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/Scoutflo/scoutflo-SRE-Playbooks)](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/stargazers)
+
+> **Comprehensive incident response playbooks for AWS and Kubernetes environments** - Helping SREs diagnose and resolve infrastructure issues faster with systematic, step-by-step troubleshooting guides.
+
+## 📋 Table of Contents
+
+- [Overview](#overview)
+- [Repository Structure](#repository-structure)
+- [Contents](#contents)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Connect with Us](#connect-with-us)
+- [Related Resources](#related-resources)
+- [License](#license)
+
+## Overview
+
+This repository contains **163 comprehensive incident response playbooks** designed to help Site Reliability Engineers (SREs) systematically diagnose and resolve common infrastructure and application issues in AWS and Kubernetes environments.
+
+### Why This Repository?
+
+- **Systematic Approach**: Each playbook follows a consistent structure with clear diagnostic steps
+- **Time-Saving**: Quickly identify root causes with correlation analysis frameworks
+- **Community-Driven**: Continuously improved by the open-source community
+- **Production-Ready**: Based on real-world incident response scenarios
+- **Comprehensive Coverage**: 25 AWS playbooks + 138 Kubernetes playbooks
+
+### Use Cases
+
+- **During Incidents**: Quick reference for troubleshooting common issues
+- **On-Call Rotation**: Essential runbook collection for on-call engineers
+- **Knowledge Sharing**: Standardize troubleshooting procedures across teams
+- **Training**: Learn systematic incident response methodologies
+- **Documentation**: Build your own runbook library
 
 ## Repository Structure
 
@@ -22,13 +59,16 @@ scoutflo-SRE-Playbooks/
 │   ├── 11-Installation-Setup/        # 1 playbook
 │   ├── 12-Namespaces/                # 2 playbooks
 │   └── README.md                     # Kubernetes playbooks documentation
+├── CONTRIBUTING.md                   # Contribution guidelines
 └── README.md                         # This file
 ```
 
 ## Contents
 
 ### AWS Playbooks (`AWS Playbooks/`)
+
 **25 playbooks** covering critical AWS services and common issues:
+
 - **Compute Services**: EC2, Lambda, ECS, EKS
 - **Networking**: VPC, ELB, Route 53, NAT Gateway
 - **Storage**: S3, EBS, RDS
@@ -42,9 +82,10 @@ scoutflo-SRE-Playbooks/
 - Security breaches and threat detection
 - Service integration failures
 
-See [AWS Playbooks/README.md](AWS%20Playbooks/README.md) for complete documentation.
+📖 See [AWS Playbooks/README.md](AWS%20Playbooks/README.md) for complete documentation and playbook list.
 
 ### Kubernetes Playbooks (`K8s Playbooks/`)
+
 **138 playbooks** organized into **12 categorized folders** covering Kubernetes cluster and workload issues:
 
 **Folder Structure:**
@@ -69,121 +110,218 @@ See [AWS Playbooks/README.md](AWS%20Playbooks/README.md) for complete documentat
 - RBAC and permission errors
 - Resource quota and capacity constraints
 
-See [K8s Playbooks/README.md](K8s%20Playbooks/README.md) for complete documentation.
+📖 See [K8s Playbooks/README.md](K8s%20Playbooks/README.md) for complete documentation and playbook list.
 
-## Common Playbook Structure
+## Getting Started
 
-Both AWS and K8s playbooks follow a consistent structure:
+### Prerequisites
 
-### 1. **Title**
-Clear, descriptive title identifying the issue
+- Basic knowledge of AWS services or Kubernetes
+- Access to AWS Console or Kubernetes cluster (for using playbooks)
+- Git (for cloning the repository)
 
-### 2. **Meaning**
-Comprehensive explanation of:
-- What the issue means
-- Common symptoms and error messages
-- Which service/component is affected
-- Typical root causes
+### Installation
 
-### 3. **Impact**
-Description of:
-- Service availability implications
-- User-facing effects
-- Related alarms or alerts
-- Cascading effects on dependent services
+#### Option 1: Clone the Repository
 
-### 4. **Playbook**
-Numbered, actionable diagnostic steps:
-- Ordered from most common to specific causes
-- Includes resource identifiers (placeholders like `<instance-id>`, `<pod-name>`)
-- References specific AWS services or Kubernetes resources
-- Provides clear commands and checks
+```bash
+# Clone the repository
+git clone https://github.com/Scoutflo/scoutflo-SRE-Playbooks.git
 
-### 5. **Diagnosis**
-Correlation analysis framework:
-- Time-based correlation between events and symptoms
-- Comparison of configuration changes with failure timestamps
-- Patterns to determine constant vs. intermittent issues
-- Guidance for extending time windows
-- Alternative evidence sources
+# Navigate to the repository
+cd scoutflo-SRE-Playbooks
 
-## Quick Start
+# View available playbooks
+ls AWS\ Playbooks/
+ls K8s\ Playbooks/
+```
 
-### For AWS Issues:
+#### Option 2: Use as Git Submodule
+
+Include playbooks in your own projects:
+
+```bash
+git submodule add https://github.com/Scoutflo/scoutflo-SRE-Playbooks.git playbooks
+```
+
+#### Option 3: Download Specific Playbooks
+
+Browse and download individual playbooks directly from GitHub web interface.
+
+### Quick Start
+
+1. **Identify Your Issue**: Determine if it's an AWS or Kubernetes issue
+2. **Navigate to Playbooks**: 
+   - AWS issues → `AWS Playbooks/`
+   - K8s issues → `K8s Playbooks/[category-folder]/`
+3. **Find the Playbook**: Match your symptoms to a playbook title
+4. **Follow the Steps**: Execute diagnostic steps in order
+5. **Use Diagnosis Section**: Apply correlation analysis for root cause identification
+
+### Learn More
+
+- **Watch Tutorials**: Check our [YouTube channel](https://www.youtube.com/@scoutflo6727) for video walkthroughs and best practices
+- **AI SRE Demo**: Watch the [Scoutflo AI SRE Demo](https://youtu.be/P6xzFUtRqRc?si=0VN9oMV05rNzXFs8) to see AI-powered incident response
+- **Scoutflo Documentation**: Visit [Scoutflo Documentation](https://scoutflo-documentation.gitbook.io/scoutflo-documentation) for platform guides
+- **Join the Community**: Connect with other SREs in our [Slack workspace](https://scoutflo.slack.com)
+
+### Example Usage
+
+**Scenario**: EC2 instance SSH connection timeout
+
 1. Navigate to `AWS Playbooks/`
-2. Find the playbook matching your issue
-3. Follow the numbered steps, replacing placeholders with your actual resource identifiers
-4. Use the Diagnosis section for root cause analysis
+2. Open `Connection-Timeout-SSH-Issues-EC2.md`
+3. Follow the Playbook steps, replacing `<instance-id>` with your actual instance ID
+4. Use the Diagnosis section to correlate events with failures
+5. Apply the identified fix
 
-### For Kubernetes Issues:
-1. Navigate to `K8s Playbooks/`
-2. Identify the category folder (e.g., `03-Pods/` for pod issues, `05-Networking/` for network issues)
-3. Find the playbook matching your specific issue within that folder
-4. Follow the numbered steps, replacing placeholders with your actual resource names
-5. Use the Diagnosis section for correlation analysis
+## Usage
 
-## Usage Guidelines
+### Playbook Structure
 
-### General Best Practices:
-1. **Start Early**: Begin with the most common causes (earlier steps in Playbook section)
-2. **Replace Placeholders**: All playbooks use placeholders (e.g., `<instance-id>`, `<pod-name>`) that must be replaced with actual values
-3. **Follow Order**: Execute steps sequentially unless you have strong evidence pointing to a specific step
-4. **Correlate Timestamps**: Use the Diagnosis section to correlate events with failures
-5. **Extend Windows**: If initial correlations don't reveal causes, extend time windows as suggested
-6. **Document Findings**: Keep notes of what you've checked and what you found
+All playbooks follow a consistent structure:
 
-### AWS-Specific:
-- Use CloudWatch Logs Insights for efficient log analysis
-- Check AWS service health dashboards
-- Review CloudTrail events for configuration changes
-- Verify IAM permissions and resource policies
+1. **Title** - Clear, descriptive issue identification
+2. **Meaning** - What the issue means, triggers, symptoms, root causes
+3. **Impact** - Business and technical implications
+4. **Playbook** - 8-10 numbered diagnostic steps (ordered from common to specific)
+5. **Diagnosis** - Correlation analysis framework with time windows
 
-### Kubernetes-Specific:
-- Use `kubectl describe` for detailed resource information
-- Check `kubectl get events` for recent events
-- Review pod logs with `kubectl logs`
-- Inspect node conditions and resource availability
-- Check scheduler logs for scheduling issues
+### Best Practices
 
-## Placeholder Reference
+- **Start Early**: Begin with the most common causes (earlier steps)
+- **Replace Placeholders**: All playbooks use placeholders (e.g., `<instance-id>`, `<pod-name>`) that must be replaced with actual values
+- **Follow Order**: Execute steps sequentially unless you have strong evidence pointing to a specific step
+- **Correlate Timestamps**: Use the Diagnosis section to correlate events with failures
+- **Extend Windows**: If initial correlations don't reveal causes, extend time windows as suggested
+- **Document Findings**: Keep notes of what you've checked and what you found
 
-### AWS Playbooks:
-- `<instance-id>` - EC2 instance identifier
-- `<bucket-name>` - S3 bucket name
-- `<region>` - AWS region
-- `<function-name>` - Lambda function name
-- `<role-name>` - IAM role name
-- `<user-name>` - IAM user name
-- `<security-group-id>` - Security group identifier
-- `<vpc-id>` - VPC identifier
-- `<rds-instance-id>` - RDS instance identifier
-- `<load-balancer-name>` - Load balancer name
+### Placeholder Reference
 
-### Kubernetes Playbooks:
-- `<pod-name>` - Pod name
-- `<namespace>` - Kubernetes namespace
-- `<deployment-name>` - Deployment name
-- `<node-name>` - Node name
-- `<service-name>` - Service name
-- `<ingress-name>` - Ingress name
+**AWS Playbooks:**
+- `<instance-id>`, `<bucket-name>`, `<region>`, `<function-name>`, `<role-name>`, `<user-name>`, `<security-group-id>`, `<vpc-id>`, `<rds-instance-id>`, `<load-balancer-name>`
+
+**Kubernetes Playbooks:**
+- `<pod-name>`, `<namespace>`, `<deployment-name>`, `<node-name>`, `<service-name>`, `<ingress-name>`, `<pvc-name>`, `<configmap-name>`, `<secret-name>`
 
 ## Contributing
 
-When adding new playbooks:
-1. Follow the established structure (Title, Meaning, Impact, Playbook, Diagnosis)
-2. Use consistent placeholder naming
-3. Order steps from most common to specific
-4. Include time-based correlation guidance in Diagnosis section
-5. Provide alternative evidence sources if initial correlations fail
+We welcome contributions from the community! Your contributions help make these playbooks better for everyone.
 
-## Statistics
+### How to Contribute
 
-- **Total Playbooks**: 163
-  - AWS: 25 playbooks
-  - Kubernetes: 138 playbooks
-- **Coverage**: Major AWS services and Kubernetes components
-- **Format**: Markdown with structured sections
-- **Language**: English
+#### 1. Reporting Issues
+
+Found a bug, unclear instruction, or have a suggestion?
+
+1. **Check Existing Issues**: Search [GitHub Issues](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/issues) first
+2. **Create a New Issue**:
+   - Use clear, descriptive title
+   - Describe the problem or suggestion
+   - Include relevant service/component, error messages, or examples
+   - Tag with appropriate labels (`aws-playbook`, `k8s-playbook`, `bug`, `enhancement`, etc.)
+
+#### 2. Improving Existing Playbooks
+
+To fix or enhance existing playbooks:
+
+1. **Fork the Repository**: Create your own fork
+2. **Create a Branch**: 
+   ```bash
+   git checkout -b fix/playbook-name-improvement
+   ```
+3. **Make Your Changes**: 
+   - Follow the established playbook structure
+   - Maintain consistency with existing formatting
+   - Update placeholders and examples as needed
+4. **Test Your Changes**: Verify the playbook is accurate and helpful
+5. **Commit and Push**:
+   ```bash
+   git add .
+   git commit -m "Fix: Improve [playbook-name] with [description]"
+   git push origin fix/playbook-name-improvement
+   ```
+6. **Create a Pull Request**: 
+   - Provide clear description of changes
+   - Reference any related issues
+   - Request review from maintainers
+
+#### 3. Adding New Playbooks
+
+To add a new playbook for an uncovered issue:
+
+1. **Check for Duplicates**: Ensure a similar playbook doesn't already exist
+2. **Follow the Structure**: Use existing playbooks as templates
+3. **Choose the Right Location**:
+   - AWS playbooks → `AWS Playbooks/`
+   - K8s playbooks → Appropriate category folder in `K8s Playbooks/`
+4. **Follow Naming Conventions**:
+   - AWS: `<IssueOrSymptom>-<Component>.md`
+   - K8s: `<AlertName>-<Resource>.md`
+5. **Include All Sections**: Title, Meaning, Impact, Playbook (8-10 steps), Diagnosis (5 correlations)
+6. **Update README**: Add the new playbook to the appropriate README's playbook list
+7. **Create Pull Request**: Follow standard contribution process
+
+### Contribution Guidelines
+
+- **Follow the Structure**: Maintain consistency with existing playbooks
+- **Use Placeholders**: Replace specific values with placeholders
+- **Be Specific**: Provide actionable, step-by-step instructions
+- **Include Correlation**: Add time-based correlation analysis in the Diagnosis section
+- **Test Thoroughly**: Ensure playbooks are accurate and helpful
+- **Document Changes**: Clearly describe what you changed and why
+
+### Review Process
+
+1. All contributions require review from maintainers
+2. Feedback will be provided within 2-3 business days
+3. Address any requested changes promptly
+4. Once approved, your contribution will be merged
+
+📖 For detailed contribution guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## Connect with Us
+
+We'd love to hear from you! Here are the best ways to connect:
+
+### Community Channels
+
+- **Slack Community**: [Join our Slack workspace](https://scoutflo.slack.com) for real-time discussions
+- **GitHub Discussions**: [Start a discussion](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/discussions) for questions and ideas
+- **GitHub Issues**: [Report bugs or request features](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/issues)
+- **LinkedIn**: Follow [Scoutflo on LinkedIn](https://www.linkedin.com/company/scoutflo/) for updates and insights
+- **Twitter/X**: Follow [@scout_flo](https://x.com/scout_flo) for latest news and announcements
+
+### Feedback & Feature Requests
+
+Have an idea for improvement or a new playbook topic?
+
+- **GitHub Issues**: Create a [feature request](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/issues/new?template=feature_request.md)
+- **Slack**: Share your ideas in our `#playbooks` channel
+
+### Bug Reports
+
+Found a bug or error in a playbook?
+
+- **GitHub Issues**: Create a [bug report](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/issues/new?template=bug_report.md)
+- **Slack**: Report in our `#playbooks` channel for quick response
+
+### Scoutflo Resources
+
+- **Official Documentation**: [Scoutflo Documentation](https://scoutflo-documentation.gitbook.io/scoutflo-documentation) - Complete guide to Scoutflo platform
+- **Website**: [scoutflo.com](https://scoutflo.com/) - Learn more about Scoutflo
+- **AI SRE Tool**: [ai.scoutflo.com](https://ai.scoutflo.com/get-started) - AI-powered SRE assistant
+- **Infra Management Tool**: [deploy.scoutflo.com](https://deploy.scoutflo.com/) - Kubernetes deployment platform
+- **YouTube Channel**: [@scoutflo6727](https://www.youtube.com/@scoutflo6727) - Tutorials and demos
+- **AI SRE Demo**: [Watch Demo Video](https://youtu.be/P6xzFUtRqRc?si=0VN9oMV05rNzXFs8) - See Scoutflo AI SRE in action
+- **Blog**: [scoutflo.com/blog](https://scoutflo.com/blog) and [blog.scoutflo.com](https://blog.scoutflo.com/) - Latest articles and insights
+- **Pricing**: [scoutflo.com/pricing](https://scoutflo.com/pricing) - Pricing information
+
+### Additional Resources
+
+- **Roadmap**: Check out our [project roadmap](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/projects) to see what's coming
+- **Documentation**: Visit our [wiki](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/wiki) for detailed guides
+- **Legal**: [Privacy Policy](https://blog.scoutflo.com/privacy/) | [Terms of Service](https://blog.scoutflo.com/terms/)
 
 ## Related Resources
 
@@ -197,6 +335,32 @@ When adding new playbooks:
 - [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
 - [Kubernetes Troubleshooting](https://kubernetes.io/docs/tasks/debug/)
 
+### SRE Resources
+- [Google SRE Book](https://sre.google/books/)
+- [Site Reliability Engineering](https://sre.google/sre-book/table-of-contents/)
+
+## Statistics
+
+- **Total Playbooks**: 163
+  - AWS: 25 playbooks
+  - Kubernetes: 138 playbooks
+- **Coverage**: Major AWS services and Kubernetes components
+- **Format**: Markdown with structured sections
+- **Language**: English
+- **Community**: Open source, community-driven
+
 ## License
 
-This repository contains operational playbooks for internal use. Please refer to your organization's documentation policies for usage and distribution guidelines.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- **Contributors**: Thank you to all contributors who help improve these playbooks
+- **Community**: The SRE community for sharing knowledge and best practices
+- **Organizations**: Companies and teams using these playbooks in production
+
+---
+
+**Made with ❤️ by the SRE community for the SRE community**
+
+If you find these playbooks helpful, please consider giving us a ⭐ on GitHub!

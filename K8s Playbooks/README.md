@@ -1,6 +1,40 @@
 # Kubernetes (K8s) Playbooks
 
+[![Kubernetes](https://img.shields.io/badge/Kubernetes-138%20playbooks-blue)](README.md)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](../../CONTRIBUTING.md)
+
+> **138 comprehensive Kubernetes incident response playbooks** organized into 12 categorized folders - Systematic troubleshooting guides for common Kubernetes cluster and workload issues to help SREs diagnose and resolve problems faster.
+
+## 📋 Table of Contents
+
+- [Overview](#overview)
+- [Directory Structure](#directory-structure)
+- [Playbook Structure](#playbook-structure)
+- [Playbook Categories](#playbook-categories)
+- [Getting Started](#getting-started)
+- [Usage Guidelines](#usage-guidelines)
+- [Quick Navigation Guide](#quick-navigation-guide)
+- [Contributing](#contributing)
+- [Connect with Us](#connect-with-us)
+- [Related Resources](#related-resources)
+
+## Overview
+
 This directory contains **138 Kubernetes incident response playbooks** organized into **12 categorized folders** to help Site Reliability Engineers (SREs) quickly find and diagnose common Kubernetes cluster and workload issues. Each playbook follows a structured format to provide systematic troubleshooting guidance.
+
+### Services & Components Covered
+
+- **Control Plane**: API Server, Scheduler, Controller Manager, etcd
+- **Nodes**: Node readiness, kubelet issues, resource constraints
+- **Pods**: Scheduling, lifecycle, health checks, resource limits
+- **Workloads**: Deployments, StatefulSets, DaemonSets, Jobs
+- **Networking**: Services, Ingress, DNS, Network Policies
+- **Storage**: PersistentVolumes, PersistentVolumeClaims, StorageClasses
+- **RBAC**: ServiceAccounts, Roles, RoleBindings, ClusterRoles
+- **Configuration**: ConfigMaps and Secrets
+- **Resource Management**: Quotas, ResourceQuotas, overcommit
+- **Monitoring**: Metrics Server, HPA, resource quotas
+- **Autoscaling**: Cluster Autoscaler, HPA scaling
 
 ## Directory Structure
 
@@ -21,25 +55,6 @@ K8s Playbooks/
 ├── 11-Installation-Setup/       (1 playbook)
 └── 12-Namespaces/              (2 playbooks)
 ```
-
-## Overview
-
-These playbooks cover critical Kubernetes components and scenarios:
-
-- **Control Plane**: API Server, Scheduler, Controller Manager, etcd, certificates
-- **Nodes**: Node readiness, kubelet issues, resource constraints
-- **Pods**: Scheduling, lifecycle, health checks, resource limits
-- **Workloads**: Deployments, StatefulSets, DaemonSets, Jobs, HPA
-- **Networking**: Services, Ingress, DNS, Network Policies, kube-proxy
-- **Storage**: PersistentVolumes, PersistentVolumeClaims, StorageClasses
-- **RBAC**: ServiceAccounts, Roles, RoleBindings, ClusterRoles
-- **Configuration**: ConfigMaps and Secrets access issues
-- **Resource Management**: Resource Quotas, overcommit, compute resources
-- **Monitoring & Autoscaling**: Metrics Server, HPA, Cluster Autoscaler
-- **Installation & Setup**: Helm and installation issues
-- **Namespaces**: Namespace management and deletion issues
-
-Each playbook provides step-by-step instructions for identifying root causes and resolving issues quickly.
 
 ## Playbook Structure
 
@@ -278,7 +293,63 @@ Namespace management issues
 - `CannotDeleteNamespace-namespace.md`
 - `NamespaceDeletionStuck-namespace.md`
 
+## Getting Started
+
+### 1. Documentation
+
+This directory contains 138 Kubernetes incident response playbooks organized into 12 categorized folders. Each playbook provides systematic troubleshooting guidance for common Kubernetes cluster and workload issues.
+
+**Quick Navigation:**
+- Browse by category folder (e.g., `03-Pods/` for pod issues)
+- Use GitHub's search to find specific playbooks
+- Match your symptoms to playbook titles
+
+### 2. Installation
+
+Clone this repository to access the Kubernetes playbooks:
+
+```bash
+# Clone the repository
+git clone https://github.com/Scoutflo/scoutflo-SRE-Playbooks.git
+
+# Navigate to K8s playbooks
+cd scoutflo-SRE-Playbooks/K8s\ Playbooks/
+
+# Browse by category
+ls 01-Control-Plane/
+ls 03-Pods/
+ls 05-Networking/
+
+# View a specific playbook
+cat 03-Pods/CrashLoopBackOff-pod.md
+```
+
+**Quick Access Options:**
+- **Bookmark category folders** based on your most common issues
+- **Add to your SRE runbook collection** for easy access
+- **Use GitHub web interface** to search and view playbooks online
+- **Clone locally** for offline access and customization
+
+**Using with kubectl**: These playbooks complement kubectl commands. Keep them handy while troubleshooting:
+
+```bash
+# Example: Troubleshooting pod issues
+kubectl get pods -n <namespace>
+# Then refer to playbooks in 03-Pods/ folder
+```
+
+### 3. Learn More
+
+- **Watch Tutorials**: Check our [YouTube channel](https://www.youtube.com/@scoutflo6727) for Kubernetes troubleshooting walkthroughs
+- **AI SRE Demo**: Watch the [Scoutflo AI SRE Demo](https://youtu.be/P6xzFUtRqRc?si=0VN9oMV05rNzXFs8) to see AI-powered incident response
+- **Kubernetes Docs**: Refer to [Kubernetes Official Documentation](https://kubernetes.io/docs/)
+- **kubectl Reference**: Use [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+- **Scoutflo Documentation**: Visit [Scoutflo Documentation](https://scoutflo-documentation.gitbook.io/scoutflo-documentation) for platform guides
+- **Community**: Join discussions in our [Slack workspace](https://scoutflo.slack.com)
+
 ## Usage Guidelines
+
+### Step-by-Step Process
 
 1. **Identify the Category**: Determine which category your issue falls into (Control Plane, Pods, Networking, etc.)
 2. **Navigate to Folder**: Go to the appropriate numbered folder (e.g., `03-Pods/` for pod issues)
@@ -287,6 +358,49 @@ Namespace management issues
 5. **Review Diagnosis Section**: Use the correlation analysis to identify root causes
 6. **Extend Time Windows**: If initial correlations don't reveal the cause, extend time windows as suggested (e.g., 30 minutes → 1 hour)
 7. **Check Alternative Sources**: Review alternative evidence sources mentioned in the Diagnosis section
+
+### Example Workflow
+
+**Scenario**: Pod stuck in CrashLoopBackOff state
+
+1. Navigate to `03-Pods/` folder
+2. Open `CrashLoopBackOff-pod.md`
+3. Read the **Meaning** section to understand the issue
+4. Review the **Impact** section to assess severity
+5. Follow **Playbook** steps:
+   - Step 1: Retrieve pod logs
+   - Step 2: Check container image
+   - Step 3: Verify resource limits
+   - ... (continue through all steps)
+6. Use **Diagnosis** section to correlate events:
+   - Compare pod crash timestamps with deployment changes
+   - Check if crashes correlate with resource limit changes
+7. Apply the identified fix
+
+### Common Placeholders
+
+Playbooks use the following placeholder format that should be replaced with actual values:
+- `<pod-name>` - Pod name
+- `<namespace>` - Kubernetes namespace
+- `<deployment-name>` - Deployment name
+- `<node-name>` - Node name
+- `<service-name>` - Service name
+- `<ingress-name>` - Ingress name
+- `<pvc-name>` - PersistentVolumeClaim name
+- `<configmap-name>` - ConfigMap name
+- `<secret-name>` - Secret name
+
+### Best Practices
+
+- **Start with the category folder**: Use the numbered folders to quickly navigate to relevant playbooks
+- **Start with common causes**: Begin with the most common causes (earlier steps in the Playbook section)
+- **Use kubectl effectively**: Use `kubectl describe` and `kubectl get events` for detailed resource information
+- **Check pod logs**: Use `kubectl logs` to examine pod logs
+- **Correlate timestamps**: Correlate timestamps between resource changes and failures
+- **Review component logs**: Review scheduler logs if pods are stuck in Pending state, API server logs for control plane issues
+- **Check node conditions**: Check node conditions and resource availability
+- **Document findings**: Document findings for future reference
+- **Consider gradual issues**: Consider gradual issues if immediate correlations aren't found
 
 ## Quick Navigation Guide
 
@@ -302,37 +416,136 @@ Namespace management issues
 | ConfigMap not found | `08-Configuration/` | `ConfigMapNotFound-configmap.md`, `PodCannotAccessConfigMap-configmap.md` |
 | Quota exceeded | `09-Resource-Management/` | `KubeQuotaExceeded-namespace.md`, `KubeCPUQuotaOvercommit-namespace.md` |
 
-## Common Placeholders
+## Contributing
 
-Playbooks use the following placeholder format that should be replaced with actual values:
-- `<pod-name>` - Pod name
-- `<namespace>` - Kubernetes namespace
-- `<deployment-name>` - Deployment name
-- `<node-name>` - Node name
-- `<service-name>` - Service name
-- `<ingress-name>` - Ingress name
-- `<pvc-name>` - PersistentVolumeClaim name
-- `<configmap-name>` - ConfigMap name
-- `<secret-name>` - Secret name
+We welcome contributions to improve Kubernetes playbooks! Your contributions help the entire SRE community.
 
-## Best Practices
+### How to Contribute
 
-- **Start with the category folder**: Use the numbered folders to quickly navigate to relevant playbooks
-- **Start with common causes**: Begin with the most common causes (earlier steps in the Playbook section)
-- **Use kubectl effectively**: Use `kubectl describe` and `kubectl get events` for detailed resource information
-- **Check pod logs**: Use `kubectl logs` to examine pod logs
-- **Correlate timestamps**: Correlate timestamps between resource changes and failures
-- **Review component logs**: Review scheduler logs if pods are stuck in Pending state, API server logs for control plane issues
-- **Check node conditions**: Check node conditions and resource availability
-- **Document findings**: Document findings for future reference
-- **Consider gradual issues**: Consider gradual issues if immediate correlations aren't found
+#### 1. Raising Issues
+
+If you find an error, unclear instructions, or have suggestions:
+
+1. **Check Existing Issues**: Search [GitHub Issues](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/issues) first
+2. **Create a New Issue**:
+   - Use clear, descriptive title (e.g., "Fix: Incorrect kubectl command in CrashLoopBackOff-pod.md")
+   - Describe the problem or suggestion
+   - Include relevant Kubernetes component, error messages, or kubectl output
+   - Tag with `k8s-playbook` label and appropriate category (pods, networking, etc.)
+
+#### 2. Updating Existing Playbooks
+
+To improve or fix existing Kubernetes playbooks:
+
+1. **Fork the Repository**: Create your own fork
+2. **Create a Branch**:
+   ```bash
+   git checkout -b fix/k8s-playbook-name
+   ```
+3. **Locate the Playbook**: Find it in the appropriate category folder
+4. **Make Your Changes**:
+   - Follow the established structure (Front Matter, Title, Meaning, Impact, Playbook, Diagnosis)
+   - Maintain YAML front matter format
+   - Use consistent placeholder naming (`<pod-name>`, `<namespace>`, etc.)
+   - Keep kubectl commands accurate
+5. **Test Your Changes**: Verify the playbook works with real Kubernetes scenarios
+6. **Commit and Push**:
+   ```bash
+   git add K8s\ Playbooks/XX-Category/Your-Playbook-Name.md
+   git commit -m "Fix: Improve [playbook-name] - [description]"
+   git push origin fix/k8s-playbook-name
+   ```
+7. **Create a Pull Request**: 
+   - Reference the issue (if applicable)
+   - Describe your changes clearly
+   - Request review from maintainers
+
+#### 3. Adding New Kubernetes Playbooks
+
+To add a new playbook for an uncovered Kubernetes issue:
+
+1. **Check for Duplicates**: Ensure a similar playbook doesn't exist
+2. **Choose the Right Category**: Place in the appropriate numbered folder:
+   - Control plane issues → `01-Control-Plane/`
+   - Pod issues → `03-Pods/`
+   - Networking issues → `05-Networking/`
+   - Storage issues → `06-Storage/`
+   - etc.
+3. **Follow Naming Convention**: `<AlertName>-<Resource>.md`
+   - Example: `KubePodCrashLooping-pod.md`
+4. **Include YAML Front Matter**:
+   ```yaml
+   ---
+   title: Issue Name - Resource Type
+   weight: 201
+   categories:
+     - kubernetes
+     - resource-type
+   ---
+   ```
+5. **Include All Required Sections**:
+   - **Title** (H1): Playbook identifier
+   - **Meaning** (H2): What the issue means, triggers, symptoms, affected component
+   - **Impact** (H2): Business and technical impact, related alerts
+   - **Playbook** (H2): 8-10 numbered diagnostic steps with kubectl commands
+   - **Diagnosis** (H2): 5 correlation analysis steps with time windows
+6. **Update README**: Add the new playbook to the appropriate category section above
+7. **Create Pull Request**: Follow standard contribution process
+
+### Contribution Guidelines
+
+- **Follow Structure**: Maintain consistency with existing playbooks
+- **Use Placeholders**: Replace specific values with placeholders
+- **Be Actionable**: Provide clear kubectl commands and steps
+- **Include Correlation**: Add time-based correlation in Diagnosis section
+- **Test Accuracy**: Verify playbooks work with real Kubernetes clusters
+- **Document Changes**: Clearly describe what and why you changed
+- **Respect Categories**: Place playbooks in the correct category folder
+
+### Review Process
+
+1. All contributions require maintainer review
+2. Feedback provided within 2-3 business days
+3. Address requested changes promptly
+4. Once approved, your contribution will be merged
+
+📖 For detailed contribution guidelines, see [CONTRIBUTING.md](../../CONTRIBUTING.md)
+
+## Connect with Us
+
+**Want to contribute?** Read our [Contributing Guidelines](#contributing) above.
+
+**For Feedback or Feature Requests**: 
+- Share with us in [Slack](https://scoutflo.slack.com) or create a [GitHub Issue](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/issues)
+
+**Bug Report?** 
+- Create a detailed issue and share it with us on [GitHub Issues](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/issues) or [Slack](https://scoutflo.slack.com)
+
+**Links:**
+- [Slack Community](https://scoutflo.slack.com) | [Roadmap](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/projects) | [Documentation](https://github.com/Scoutflo/scoutflo-SRE-Playbooks/wiki)
+
+**Scoutflo Resources:**
+- [Official Documentation](https://scoutflo-documentation.gitbook.io/scoutflo-documentation) | [Website](https://scoutflo.com/) | [AI SRE Tool](https://ai.scoutflo.com/get-started)
+- [Infra Management Tool](https://deploy.scoutflo.com/) | [YouTube Channel](https://www.youtube.com/@scoutflo6727) | [LinkedIn](https://www.linkedin.com/company/scoutflo/)
+- [Twitter/X](https://x.com/scout_flo) | [Blog](https://scoutflo.com/blog) | [Pricing](https://scoutflo.com/pricing)
 
 ## Related Resources
 
-- Kubernetes Documentation: https://kubernetes.io/docs/
-- kubectl Cheat Sheet: https://kubernetes.io/docs/reference/kubectl/cheatsheet/
-- Kubernetes Troubleshooting Guide: https://kubernetes.io/docs/tasks/debug/
-- Kubernetes API Reference: https://kubernetes.io/docs/reference/kubernetes-api/
+### Kubernetes Documentation
+- [Kubernetes Documentation](https://kubernetes.io/docs/)
+- [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
+- [Kubernetes Troubleshooting Guide](https://kubernetes.io/docs/tasks/debug/)
+- [Kubernetes API Reference](https://kubernetes.io/docs/reference/kubernetes-api/)
+
+### Kubernetes Tools
+- [kubectl Documentation](https://kubernetes.io/docs/reference/kubectl/)
+- [k9s - Terminal UI](https://k9scli.io/)
+- [Lens - Kubernetes IDE](https://k8slens.dev/)
+
+### SRE Resources
+- [Google SRE Book](https://sre.google/books/)
+- [Site Reliability Engineering](https://sre.google/sre-book/table-of-contents/)
+- [Kubernetes Best Practices](https://kubernetes.io/docs/concepts/cluster-administration/)
 
 ## Statistics
 
@@ -340,3 +553,7 @@ Playbooks use the following placeholder format that should be replaced with actu
 - **Categories**: 12
 - **Organization**: Numbered folders for easy navigation
 - **Coverage**: All major Kubernetes components and common issues
+
+---
+
+**Back to [Main Repository](../../README.md)** | **View [AWS Playbooks](../AWS%20Playbooks/README.md)**
